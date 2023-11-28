@@ -13,4 +13,4 @@ if last > 5:
 elif last == 0:
     print(start_text, "and is 0")
 else:
-    print(start_text, "and less than 6 and not 0")
+    print(start_text, "and less is than 6 and not 0")
