@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-for x in range(0, 10):
-    for i in range(1, 10):
-        if not i <= x:
-            if x == 8 and i == 9:
-                print(f"{x}{i}", end="\n")
-            print(f"{x}{i}", end=", ")
-        else:
-             continue
+x = 0
+while x <= 89:
+    if x % 10 == 0:
+        x += 1 + x // 10
+    print("{:02d}".format(x), end='\n' if x == 89 else ', ')
+    x += 1
