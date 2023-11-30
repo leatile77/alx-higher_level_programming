@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 def conv_upper(char):
     if ord(char) >= 97 and ord(char) <= 122:
         return (ord(char) - 32)
