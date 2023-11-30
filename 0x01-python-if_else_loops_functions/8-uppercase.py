@@ -5,7 +5,7 @@ def conv_upper(char):
     else:
         return ord(char)
 
-    
+
 def uppercase(str):
     new_str = ""
     for letter in str:
