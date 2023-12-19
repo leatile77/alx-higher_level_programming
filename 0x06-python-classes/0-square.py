@@ -2,6 +2,7 @@
 
 """An empty class called Square"""
 
+
 class Square:
     """Inside our Square"""
     pass
