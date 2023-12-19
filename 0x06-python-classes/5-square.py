@@ -16,9 +16,9 @@ class Square:
 
     @property
     def size(self):
-            """Get /& Set size"""
-            return self.__size
-        
+        """Get /& Set size"""
+        return self.__size
+
     @size.setter
     def size(self, value):
         """set size accordingly, else error"""
