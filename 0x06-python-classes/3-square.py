@@ -10,7 +10,7 @@ class Square:
         """Initializes a square.
 
         Args:
-            size (int): The size of the square
+            size (int): The size of the square.
         """
 
         if not isinstance(size, int):
@@ -18,3 +18,8 @@ class Square:
         elif size < o:
             raise ValueError("size must be >= 0")
         self.__size = size
+
+    def area(self):
+        """Returns the area"""
+
+        return (self.__size * self.__size)
