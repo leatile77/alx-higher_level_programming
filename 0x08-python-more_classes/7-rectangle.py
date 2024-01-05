@@ -3,6 +3,8 @@
 """Rectangle definittion"""
 class Rectangle:
     """Inside the rectangle"""
+    number_of_instances = 0
+    print_symbol = '#'
     def __init__(self, width=0, height=0):
         """Initializes the rectangle.
         
@@ -10,6 +12,7 @@ class Rectangle:
         width (int): width of rectangle.
         height (int): height of rectangle.
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -59,7 +62,7 @@ class Rectangle:
 
         rec = []
         for i in range(self.__height):
-            [rec.append('#') for j in range(self.__width)]
+            [rec.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 rec.append("\n")
         return ("".join(rec))
@@ -72,4 +75,5 @@ class Rectangle:
 
     def __del__(self):
         """Print a message when deleting a rectangle"""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
