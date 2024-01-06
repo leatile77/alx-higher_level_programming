@@ -1,0 +1,76 @@
+from ''0-add_integer'' module
+=============================
+
+using ''add_integer'' function
+==============================
+
+Numbers
+=======
+
+::
+
+>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 2)
+4
+
+::
+
+>>> add_integer(-2, 1)
+1
+
+For floats, which are first casted into int
+
+::
+
+>>> add_integer(2.0, 2.0)
+4
+
+We can also do a combo of int and float
+
+::
+
+>> add_integer(2.4, 3)
+5
+
+Second option is optional and 98 by default
+
+::
+
+>>> add_integer(3)
+101
+
+Non-numbers
+===========
+''add_integer()'' expects type int or float, if one of the arguments isnt of one of these types, it raises a TypeError
+
+::
+
+>>> add_integer("what", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>>> add_integer(2, "what")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+::
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+::
+
+>> add_integer(2, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+If both args arent int or float, Error message is only printed for first arg
+
+::
+
+>>> add_integer("say", "what")
+Traceback (most recent call last):
+TypeError: a must be an integer
