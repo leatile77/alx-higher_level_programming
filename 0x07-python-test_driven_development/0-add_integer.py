@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-"""Defines a function that adds 2 ints."""
+"""Defines a function that adds 2 numbers.
+Accepts integer or float.
+Type casts first into integers.
+Returns their sum
+"""
 
 def add_integer(a, b=98):
-    """Returns sum of a and b.
+    """Adds a and b.
     Args:
     a (int/float): first arg
     b (int/float): second arg
-
     Raises:
-    TypeError: if a or b is not both int or float.
+    TypeError: if either a or b is not type int or float.
     """
     
     if not isinstance(a, int) and not isinstance(a, float):
