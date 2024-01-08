@@ -1,0 +1,35 @@
+Using 5-text_indentation.py
+===========================
+
+This module defines a function that indents text ''text_indentation(text)''.
+
+Usage
+=====
+
+After each of these characters: '':'', ''?'', ''.''; two new lines are printed.
+
+Valid ''text''
+==============
+
+::
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("what?")
+what?
+<BLANKLINE>
+
+::
+
+>>> text_indentation("what.")
+what.
+<BLANKLINE>
+
+::
+
+>>> text_indentation("  what.  Is this:")
+what.
+<BLANKLINE>
+Is this:
+<BLANKLINE>
+
+
