@@ -1,9 +1,23 @@
 #!/usr/bin/python3
+"""Defines Rectangle class."""
 
 from models.base import Base
 
 class Rectangle(Base):
+    """Represents rectangle."""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize new rectangle.
+        Args:
+            width (int): Width of new Rectangle.
+            height (int): Height of new Rectangle.
+            x (int): x coordinate of Rectangle.
+            y (int): y coordinate of Rectangle.
+            id (int): identity of Rectangle.
+        Raises:
+            TypeError: if width, height, x or y is not type int.
+            ValueError: if width or height <= 0.
+            ValueError: if x or y < 0.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -12,6 +26,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """get/set width of Rectangle."""
         return self.__width
 
     @width.setter
@@ -24,6 +39,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """get/set height of Rectangle."""
         return self.__height
 
     @height.setter
@@ -36,6 +52,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """get/set x coordinate of Rectangle."""
         return self.__x
 
     @x.setter
@@ -48,6 +65,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """get/set y coordinate of Rectangle."""
         return self.__y
 
     @y.setter
@@ -59,9 +77,11 @@ class Rectangle(Base):
         self.__y = val
 
     def area(self):
+        """Returns area of rectangle."""
         return self.width * self.height
 
     def display(self):
+        """Print Rectangle using '#' character."""
         for verti in range(self.y):
             print("")
 
@@ -77,6 +97,17 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """Update the Rectangle.
+        Args:
+            *args (ints): New values:
+               1st argument should be the id attribute
+               2nd argument should be the width attribute
+               3rd argument should be the height attribute
+               4th argument should be the x attribute
+               5th argument should be the y attribute
+          
+            **kwargs (dict): new pairs of attributes.
+        """
         if args and len(args) != 0:
             k = 0
             for arg in args:
@@ -113,4 +144,5 @@ class Rectangle(Base):
                     self.y = val
 
     def to_dictionary(self):
+        """Returns dictionary representation of Rectangle.""" 
         return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
