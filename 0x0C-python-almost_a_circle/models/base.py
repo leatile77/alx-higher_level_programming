@@ -20,16 +20,24 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-"""@staticmethod
+    @staticmethod
     def to_json_string(list_dictionaries):
+        """Returns JSON serialized list of dicts.
+        Args:
+        list_dictionaries (list): List of dictionaries
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
 
-        return (json.dumps(list_dictionaries))"""
+        return (json.dumps(list_dictionaries))
         
 
-""" @classmethod
+    @classmethod
     def save_to_file(cls, list_objs):
+        """Write JSON serialization of list of objects to a file.
+        Args:
+        list_objs (list): List of Base instances.
+        """
         filename = "{}.json".format(cls.__name__)
 
         with open(filename, "w") as jsonfile:
@@ -37,27 +45,40 @@ class Base:
                 jsonfile.write("[]")
             else:
                 dc_list = [obj.to_dictionary() for obj in list_objs]
-                jsonfile.write(Base.to_json_string(dc_list))"""
+                jsonfile.write(Base.to_json_string(dc_list))
 
-"""@staticmethod
+    @staticmethod
     def from_json_string(json_string):
+        """Returns deserialization of a JSON string.
+        Args:
+        json_string (str): JSON representation of a list of dicts
+        """
         if json_string is None or json_string == "[]":
             return []
-        return json.loads(json_string)"""
+        return json.loads(json_string)
 
-""" @classmethod
+    @classmethod
     def create(cls, **dictionary):
+        """Return a class instantiated from a dict.
+        Args:
+        **dictionary (dict): k/v pairs of attributes.
+        """
         if dictionary:
             if cls.__name__ == "Rectangle":
                 updated = cls(1, 1)
             else:
                 updated = cls(1)
             updated.update(**dictionary)
-            return updated"""
+            return updated
 
     
-""" @classmethod
+    @classmethod
     def load_from_file(cls):
+        """Returns a list of classes instantiated from a JSON file.
+        Returns:
+        if file not found - empty list
+        else - a list of instantiated classes
+        """
         filename = "{}.json".format(cls.__name__)
         try:
             with open(filename, "r") as jsonfile:
@@ -68,4 +89,3 @@ class Base:
                 return [cls.create(**dct) for dct in dct_list]
         except FileNotFoundError:
             return []
-"""
