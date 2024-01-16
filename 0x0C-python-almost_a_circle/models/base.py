@@ -10,7 +10,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
+"""
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None or list_dictionaries == []:
@@ -59,3 +59,4 @@ class Base:
                 return [cls.create(**dct) for dct in dct_list]
         except FileNotFoundError:
             return []
+"""
